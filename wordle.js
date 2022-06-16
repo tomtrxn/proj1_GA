@@ -3,10 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     createSquares();
     
     //array within array - an array will contain all word guesses, and each word guess will contain an inner array of letters
-    const guessedWord = [[]]
+    let guessedWord = [[]]
     //to figure out the next available letter slot in word guess
-    const nextSlot = 1;
+    let nextSlot = 1;
 
+    // NOTE TO SELF: Use let IF you run into 'TypeError: Assignment to constant variable'.
 
     //now need to figure out how to iterate over each key and the onclick handler
     const keys = document.querySelectorAll('.keyboard-row button');
