@@ -2,8 +2,11 @@
 document.addEventListener("DOMContentLoaded", () => {
     createSquares();
     
-    //array within array - an array will contain all word guesses, and each word guess will contain an array of letters
+    //array within array - an array will contain all word guesses, and each word guess will contain an inner array of letters
     const guessedWord = [[]]
+    //to figure out the next available letter slot in word guess
+    const nextSlot = 1;
+
 
     //now need to figure out how to iterate over each key and the onclick handler
     const keys = document.querySelectorAll('.keyboard-row button');
@@ -26,6 +29,11 @@ document.addEventListener("DOMContentLoaded", () => {
         const currentWordArr = getCurrentWordArr();
         if(currentWordArr && currentWordArr.length < 5) {
             currentWordArr.push(letter);
+            //string will start at index 1 as per set out in function createSquares()
+            const nextSlotEl = document.getElementById(String(1))
+            nextSlot = nextSlot+ 1;
+
+            nextSlotEl.textContent = letter
         }
     }
     
